@@ -16,7 +16,8 @@ app.get("/", (req, res) => {
   res.json("Hello Node!");
 });
 
-
+const busAPI = require("./src/api/Bus.api");
+app.use("/bus", busAPI());
 
 app.listen(PORT, () => {
   console.log(`App listening at http://localhost:${PORT}`);
