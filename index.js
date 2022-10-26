@@ -4,6 +4,7 @@ const dotenv = require("dotenv").config();
 const bodyParser = require("body-parser");
 const connectDB = require("./src/config/config");
 const app = express();
+app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
 
@@ -16,8 +17,10 @@ app.get("/", (req, res) => {
   res.json("Hello Node!");
 });
 
-
+app.use("/users", require("./src/controller/user.controller"));
 
 app.listen(PORT, () => {
   console.log(`App listening at http://localhost:${PORT}`);
 });
+
+
