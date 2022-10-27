@@ -16,7 +16,8 @@ app.get("/", (req, res) => {
   res.json("Hello Node!");
 });
 
-
+const paymentApi = require("./src/api/payment.api");
+app.use("/payment", paymentApi());
 
 app.listen(PORT, () => {
   console.log(`App listening at http://localhost:${PORT}`);
