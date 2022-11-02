@@ -1,7 +1,15 @@
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
-const busSchema = new Schema({
+const sheduleSchema = new Schema({
+  date: {
+    type: String,
+    required: true,
+  },
+  routeNo: {
+    type: String,
+    required: true,
+  },
   busNo: {
     type: String,
     required: true,
@@ -10,11 +18,12 @@ const busSchema = new Schema({
     type: String,
     required: true,
   },
-  routeNo: {
+ 
+  departureTime: {
     type: String,
     required: true,
   },
-  ownerName: {
+  arriveTime: {
     type: String,
     required: true,
   },
@@ -22,17 +31,17 @@ const busSchema = new Schema({
     type: String,
     required: true,
   },
-  busType: {
+  inspector: {
     type: String,
     required: true,
   },
-  Password: {
+  busType: {
     type: String,
     required: true,
   },
 
 });
 
-const Bus = mongoose.model("buses", busSchema);
+const Shedule = mongoose.model("shedule", sheduleSchema);
 
-module.exports = Bus;
+module.exports = Shedule;

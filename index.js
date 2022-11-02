@@ -19,6 +19,9 @@ app.get("/", (req, res) => {
 const busAPI = require("./src/api/Bus.api");
 app.use("/bus", busAPI());
 
+const sheduleAPI = require("./src/api/Shedule.api");
+app.use("/shedule", sheduleAPI());
+
 app.listen(PORT, () => {
   console.log(`App listening at http://localhost:${PORT}`);
 });
