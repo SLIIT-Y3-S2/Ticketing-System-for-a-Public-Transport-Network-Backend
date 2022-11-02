@@ -22,6 +22,8 @@ app.use("/bus", busAPI());
 
 const sheduleAPI = require("./src/api/Shedule.api");
 app.use("/shedule", sheduleAPI());
+const paymentApi = require("./src/api/payment.api");
+app.use("/payment", paymentApi());
 app.use("/users", require("./src/controller/user.controller"));
 
 app.listen(PORT, () => {
