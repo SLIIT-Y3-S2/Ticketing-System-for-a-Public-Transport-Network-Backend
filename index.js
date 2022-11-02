@@ -17,6 +17,8 @@ app.get("/", (req, res) => {
   res.json("Hello Node!");
 });
 
+const paymentApi = require("./src/api/payment.api");
+app.use("/payment", paymentApi());
 app.use("/users", require("./src/controller/user.controller"));
 
 app.listen(PORT, () => {
