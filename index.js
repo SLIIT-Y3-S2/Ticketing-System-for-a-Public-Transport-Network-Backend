@@ -4,6 +4,7 @@ const dotenv = require("dotenv").config();
 const bodyParser = require("body-parser");
 const connectDB = require("./src/config/config");
 const app = express();
+app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
 
@@ -21,7 +22,10 @@ app.use("/bus", busAPI());
 
 const sheduleAPI = require("./src/api/Shedule.api");
 app.use("/shedule", sheduleAPI());
+app.use("/users", require("./src/controller/user.controller"));
 
 app.listen(PORT, () => {
   console.log(`App listening at http://localhost:${PORT}`);
 });
+
+
