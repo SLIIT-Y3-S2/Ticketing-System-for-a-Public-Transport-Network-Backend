@@ -77,6 +77,7 @@ router.post("/login", async (req, res) => {
         dob: user.dob,
         address:user.address,
         type: user.type,
+        balance:user.balance
       },
     });
   } catch (err) {
