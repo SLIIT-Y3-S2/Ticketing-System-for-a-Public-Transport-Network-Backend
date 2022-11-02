@@ -26,9 +26,14 @@ const busSchema = new Schema({
     type: String,
     required: true,
   },
-  Password: {
+  type:{
+    type:String,
+    default:"Bus",
+  },
+  password: {
     type: String,
     required: true,
+    minLength: 8,
   },
 
 });
