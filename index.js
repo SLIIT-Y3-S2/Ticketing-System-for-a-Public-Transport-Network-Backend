@@ -17,6 +17,13 @@ app.get("/", (req, res) => {
   res.json("Hello Node!");
 });
 
+const busAPI = require("./src/api/Bus.api");
+app.use("/bus", busAPI());
+
+const sheduleAPI = require("./src/api/Shedule.api");
+app.use("/shedule", sheduleAPI());
+const paymentApi = require("./src/api/payment.api");
+app.use("/payment", paymentApi());
 app.use("/users", require("./src/controller/user.controller"));
 
 app.listen(PORT, () => {
