@@ -17,6 +17,14 @@ const userSchema = new mongoose.Schema({
   address: {
     type: String,
   },
+  type: {
+    type: String,
+    default: "Passenger",
+  },
+  balance: {
+    type: Number,
+    default:100
+  },
   password: {
     type: String,
     required: true,
