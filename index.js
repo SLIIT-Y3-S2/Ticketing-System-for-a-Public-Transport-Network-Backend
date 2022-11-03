@@ -22,6 +22,10 @@ app.use("/bus", busAPI());
 
 const sheduleAPI = require("./src/api/Shedule.api");
 app.use("/shedule", sheduleAPI());
+
+const inspectorAPI = require("./src/api/Inspector.api");
+app.use("/inspector", inspectorAPI());
+
 const paymentApi = require("./src/api/payment.api");
 app.use("/payment", paymentApi());
 app.use("/users", require("./src/controller/user.controller"));
