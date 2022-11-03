@@ -28,6 +28,8 @@ app.use("/inspector", inspectorAPI());
 
 const paymentApi = require("./src/api/payment.api");
 app.use("/payment", paymentApi());
+const journeyAPI = require("./src/api/Journey.api");
+app.use("/journey", journeyAPI());
 app.use("/users", require("./src/controller/user.controller"));
 
 app.listen(PORT, () => {
