@@ -120,6 +120,8 @@ router.get("/", auth, async (req, res) => {
     gender: user.gender,
     dob: user.dob,
     address: user.address,
+    type: user.type,
+    balance: user.balance,
   });
 });
 
